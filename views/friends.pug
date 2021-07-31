@@ -1,0 +1,17 @@
+extends ./base.pug
+
+block content
+    section.fhead
+        div Friends
+        div ICON
+
+    section.fsearch
+        form(action="#" method="get")
+            input(type="text" placeholder="친구를 검색하세요.")
+
+    section.flist
+        each f in list
+            div.flist__friend
+                div(style="background-image: url(" + f.avatar + "); background-size: cover;") 
+                div #{f.nickname}
+                div #{f.statusMessage}
